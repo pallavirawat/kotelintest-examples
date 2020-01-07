@@ -1,10 +1,13 @@
 package sample
 
+import io.kotlintest.TestCaseOrder
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.AnnotationSpec
 
 class NameFunctionTest : AnnotationSpec(){
+    override fun testCaseOrder() = TestCaseOrder.Random
 
+    @Ignore
     @Test
     fun test(){
         //actual vs expected

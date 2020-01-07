@@ -12,6 +12,9 @@ import io.kotlintest.tables.headers
 import io.kotlintest.tables.row
 import io.kotlintest.tables.table
 import io.kotlintest.Result
+import io.kotlintest.matchers.numerics.shouldBeLessThan
+import io.kotlintest.tables.forNone
+
 
 class PptSample : AnnotationSpec() {
 
@@ -34,20 +37,26 @@ class PptSample : AnnotationSpec() {
     }
 
     @Test
-    fun `should add`(){
+    fun `should add`() {
+        //data-driven-tests
         val myTable = table(
             headers("a", "b", "result"),
             row(1, 2, 3),
-            row(1, 1, 2)
+            row(1, 1, 7)
         )
 
         forAll(myTable) { a, b, result ->
             a + b shouldBe result
         }
+
+        forNone(myTable)
+        { a, b, result ->
+            a + b shouldBeLessThan  result
+        }
     }
 
     @Test
-    fun `time to see how is our matcher`(){
+    fun `time to see how is our matcher`() {
         "foo and bar" should containFoo()
     }
 
@@ -60,7 +69,6 @@ class PptSample : AnnotationSpec() {
                 "String $value should not include foo"
             )
     }
-
 
 
 }

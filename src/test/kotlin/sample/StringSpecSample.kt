@@ -15,7 +15,6 @@ class StringSpecSample : StringSpec(){
         "bstartsWith should test for a prefix" {
             "world" should startWith("wor")
         }
-
     }
 
 }
