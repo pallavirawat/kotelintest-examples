@@ -6,7 +6,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 
 
-class StringSpecSample : StringSpec(){
+class StringSpecSampleTests : StringSpec(){
     init {
         "length should return size of string hello as 5" {
             "hello".length shouldBe 5
