@@ -10,3 +10,11 @@ fun containPallavi() = object : Matcher<String> {
             "string $value shoudl not contain pallavi")
     }
 }
+
+fun containExcitement() = object : Matcher<String> {
+    override fun test(value: String): Result {
+        return Result(value.contains("Woohoo"),
+            "string $value should contain pallavi always",
+            "string $value shoudl not contain pallavi")
+    }
+}

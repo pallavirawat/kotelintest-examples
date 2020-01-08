@@ -3,9 +3,9 @@ package sample.stringSpec.birthdayCandle
 
 //return custom wish telling me how many longest candles i blew
 
-fun birthdayCakeCandles(ar: List<Int>, name: String): String {
-    val longestCandles = ar.max()?.let {
-            max -> ar.filter { it == max }
+fun allBirthdayCandlesWish(candles: List<Int>, name: String): String {
+    val longestCandles = candles.max()?.let {
+            max -> candles.filter { it == max }
     }
     if (longestCandles.isNullOrEmpty()){
         throw Exception("i want candles on my birthday always!!!")
