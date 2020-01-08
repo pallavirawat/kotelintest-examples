@@ -1,6 +1,5 @@
-package sample
+package sample.annotationSpec
 
-import io.kotlintest.extensions.TestListener
 import io.kotlintest.matchers.haveLength
 import io.kotlintest.matchers.startWith
 import io.kotlintest.properties.assertAll
@@ -9,8 +8,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.AnnotationSpec
 
 
-class BasicAssertionWithListener : AnnotationSpec() {
-    override fun listeners(): List<TestListener> = listOf(TimerListener)
+class BasicAssertion : AnnotationSpec() {
 
     @Test
     fun `length should return size of string hello as 5`() {

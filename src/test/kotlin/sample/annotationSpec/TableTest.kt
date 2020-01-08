@@ -1,4 +1,4 @@
-package sample
+package sample.annotationSpec
 
 import io.kotlintest.matchers.numerics.shouldBeLessThan
 import io.kotlintest.shouldBe

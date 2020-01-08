@@ -1,4 +1,4 @@
-package sample
+package sample.annotationSpec
 
 import io.kotlintest.Matcher
 import io.kotlintest.Result
