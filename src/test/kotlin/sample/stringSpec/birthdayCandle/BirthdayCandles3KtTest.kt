@@ -1,18 +1,38 @@
 package sample.stringSpec.birthdayCandle
 
+import io.kotlintest.matchers.string.shouldContain
+import io.kotlintest.shouldBe
+import io.kotlintest.shouldThrow
 import io.kotlintest.specs.StringSpec
-import java.io.StringReader
-
 
 class BirthdayCandles3KtTest : StringSpec({
-    val candles = arrayOf(1, 2, 3, 4)
-    val name = "pallavi"
+    val candles = arrayOf(1,2,4)
+    val name = "Pallavi"
+    "should contain name in the wish"{
+        //
 
-    "should throw an exception when no candles are present"{
+
+        //
+        val customWish = getLongestCandles(candles, name)
+
+        //
+        customWish shouldContain name
 
     }
 
-    "table-data-testing"{
+    "should throw and exception when no candles are given"{
+        val exception = shouldThrow<Exception> {
+            getLongestCandles(arrayOf(), name)
+        }
 
+        exception.message shouldBe "i always want candles on my birthday!!!"
     }
 })
+
+class test : StringSpec(){
+    init {
+        "should test "{
+
+        }
+    }
+}

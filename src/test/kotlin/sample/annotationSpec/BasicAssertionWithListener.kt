@@ -13,6 +13,12 @@ import sample.TimerListener
 class BasicAssertionWithListener : AnnotationSpec() {
     override fun listeners(): List<TestListener> = listOf(TimerListener)
 
+    @BeforeAll
+    fun `hello world`(){
+
+    }
+
+
     @Test
     fun `length should return size of string hello as 5`() {
         "hello".length shouldBe 5

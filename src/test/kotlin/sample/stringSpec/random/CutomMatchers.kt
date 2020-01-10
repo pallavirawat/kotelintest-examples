@@ -1,4 +1,4 @@
-package sample.stringSpec.toShow
+package sample.stringSpec.random
 
 import io.kotlintest.Matcher
 import io.kotlintest.Result

@@ -1,4 +1,4 @@
-package sample.stringSpec.toShow
+package sample.stringSpec.random
 
 import io.kotlintest.matchers.string.shouldContain
 import io.kotlintest.specs.StringSpec
@@ -7,7 +7,7 @@ import io.kotlintest.tables.forAll
 import io.kotlintest.tables.headers
 import io.kotlintest.tables.row
 import io.kotlintest.tables.table
-import sample.stringSpec.birthdayCandle.customWishingWithLongestCandleNoExcuseAllowed
+import sample.stringSpec.birthdayCandle.getLongestCandles
 import java.lang.Exception
 
 
@@ -15,7 +15,7 @@ class BirthdayCandles3KtTest : StringSpec({
     "should throw and exception when no candles are present"{
         val name = "Pallavi"
         val exception = shouldThrow<Exception> {
-            customWishingWithLongestCandleNoExcuseAllowed(
+            getLongestCandles(
                 arrayOf(),
                 name
             )
@@ -32,7 +32,7 @@ class BirthdayCandles3KtTest : StringSpec({
         )
 
         forAll(girls){ candles, name->
-            customWishingWithLongestCandleNoExcuseAllowed(
+            getLongestCandles(
                 candles,
                 name
             ) shouldContain "Woohoo"
