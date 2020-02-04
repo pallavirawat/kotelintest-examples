@@ -20,7 +20,7 @@ class CoroutineTest : StringSpec({
     "should test correct user is being returned"{
         val user = fetchUser("sam")
         user.name shouldBe "sam"
-        user.id shouldBe "123"
+        user.id shouldBe 1
     }
 
     "concurrent fetch users" {

@@ -1,14 +1,16 @@
 package sample.stringSpec.random
 
 import io.kotlintest.matchers.string.shouldContain
+import io.kotlintest.should
+import io.kotlintest.shouldNot
 import io.kotlintest.specs.StringSpec
 import sample.stringSpec.birthdayCandle.customWishingWithLongestCandle
-
-fun containPallavi() = object: Matcher<String> {
-    override fun test(value: String): Result {
-        return Result(value.contains("Pallavi"), "it is true", "it is false")
-    }
-}
+//
+//fun containPallavi() = object: Matcher<String> {
+//    override fun test(value: String): Result {
+//        return Result(value.contains("Pallavi"), "it is true", "it is false")
+//    }
+//}
 
 class BirthdayCandles2KtTest : StringSpec() {
 
@@ -17,8 +19,8 @@ class BirthdayCandles2KtTest : StringSpec() {
             val candles = arrayOf(1, 2, 3, 4)
             val name = "Pallavi"
 
-            val wishesForPallavi = wishingWithLongestBirthdayCandle(candles, name)
-            val wishesForNayanika = wishingWithLongestBirthdayCandle(candles, "nayanika")
+            val wishesForPallavi = customWishingWithLongestCandle(candles, name)
+            val wishesForNayanika = customWishingWithLongestCandle(candles, "nayanika")
 
             wishesForPallavi shouldContain "Pallavi"
             wishesForPallavi should containPallavi()

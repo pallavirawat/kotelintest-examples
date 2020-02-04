@@ -1,12 +1,16 @@
 package sample.stringSpec.random
 
+import io.kotlintest.extensions.TestListener
 import io.kotlintest.matchers.string.shouldContain
+import io.kotlintest.should
+import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 import io.kotlintest.shouldThrow
 import io.kotlintest.tables.forAll
 import io.kotlintest.tables.headers
 import io.kotlintest.tables.row
 import io.kotlintest.tables.table
+import sample.TimerListener
 import sample.stringSpec.birthdayCandle.getLongestCandles
 import java.lang.Exception
 
@@ -18,10 +22,10 @@ class BirthdayCandles3KtTest : StringSpec() {
     init {
         "should throw exception when no candles are there on my birthday"{
             val exception = shouldThrow<Exception> {
-                wishingWithLongestCandleNoExcuseAllowed(arrayOf(), "Pallavi")
+                getLongestCandles(arrayOf(), "Pallavi")
             }
 
-            exception.message shouldBe "i want candles on my birthday always!!!"
+            exception.message shouldBe "i always want candles on my birthday!!!"
         }
 
 
@@ -32,7 +36,7 @@ class BirthdayCandles3KtTest : StringSpec() {
                 row(arrayOf(1, 2, 3, 4, 5), "nayanika")
             )
             forAll(birthdayGirls){ candles, name ->
-                wishingWithLongestCandleNoExcuseAllowed(candles, name) should containExcitement()
+                getLongestCandles(candles, name) should containExcitement()
             }
         }
     }
